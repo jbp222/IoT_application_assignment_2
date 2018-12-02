@@ -9,7 +9,7 @@ A smart home IoT implementation that provides the following sensor controlled fu
 
 ## Tools, Technologies and Equipment
 
-###Hardware: 
+### Hardware: 
 Raspberry Pi 3B
 SenseHAT for RPi
 PIR sensor for RPi
@@ -20,11 +20,11 @@ Router
 Smart plug
 Electric blanket
 
-###Programming languages:
+### Programming languages:
 Python
 Bash
 
-###APIs:
+### APIs:
 Philips Hue API
 Smart plug API (TBD)
 Twilio via Wia

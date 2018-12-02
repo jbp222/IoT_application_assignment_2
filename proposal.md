@@ -10,25 +10,24 @@ A smart home IoT implementation that provides the following sensor controlled fu
 ## Tools, Technologies and Equipment
 
 ### Hardware: 
-Raspberry Pi 3B
-SenseHAT for RPi
-PIR sensor for RPi
-Phillips Hue Smart Hub
-Phillips Hue Smart bulb
-Mobile Phones
-Router
-Smart plug
-Electric blanket
+* Raspberry Pi 3B
+* SenseHAT for RPi
+* PIR sensor for RPi
+* Phillips Hue Smart Hub
+* Phillips Hue Smart bulb
+* Mobile Phones
+* Router
+* Smart plug
+* Electric blanket
 
 ### Programming languages:
-Python
-Bash
+* Python
+* Bash
 
 ### APIs:
-Philips Hue API
-Smart plug API (TBD)
-Twilio via Wia
-
+* Philips Hue API
+* Smart plug API (TBD)
+* Twilio via Wia
 
 ## Project Repository
 https://github.com/jdaly222/IoT_application_assignment_2

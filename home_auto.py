@@ -147,7 +147,6 @@ try:
             temp = int(str(temp_resp.json()["state"]["temperature"])[0:2])
 
             if hour >= on_time and hour < off_time and not on:
-                print "hour= " + str(hour) + " on= " + str(on) + " temp= " + str(temp)
                 if temp <= 15:
                     act = 1
                     enable = 1

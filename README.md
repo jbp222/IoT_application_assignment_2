@@ -1,7 +1,8 @@
-# Author: Julianne Daly, WIT
-# Student ID: 20082215
-# Project: Smart Home IoT implementation (IoT application assignment 2)
-# Proposal document link: https://github.com/jdaly222/IoT_application_assignment_2/blob/master/proposal.md
+# Smart Home IoT implementation (IoT application assignment 2)
+
+### Author: Julianne Daly, WIT
+### Student ID: 20082215
+### Proposal document link: https://github.com/jdaly222/IoT_application_assignment_2/blob/master/proposal.md
 
 ## Brief overview of project:
 * Smart home IoT application using physical devices and sensors incorptorating connected device architecture

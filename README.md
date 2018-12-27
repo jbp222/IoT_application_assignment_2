@@ -8,10 +8,11 @@
 * Smart home IoT application using physical devices and sensors incorptorating connected device architecture
 * Technologies and tools used to implement the project include Python, Bash, REST api's, Bluetooth, IoT Cloud Platform Twilio, PIR sensor, RPi 3, Smart plug, smart bulb, smart motion sensor with temperature sensor,
   mobile phones
-* Functionalities include:
-..* bluetooth location based messaging and MAC address identification
-..* location and sensor based activation of an electronic device (bluetooth and temperature sensor with smart plug & electic blanket)
-..* location and sensor based illumination of light bulb
+
+Functionalities include:
+* bluetooth location based messaging and MAC address identification
+* location and sensor based activation of an electronic device (bluetooth and temperature sensor with smart plug & electic blanket)
+* location and sensor based illumination of light bulb
 
 ## Differences between proposal document and final implementation:
 * SenseHAT sensor was not used for this project as some GPIO pins were taken up by PIR sensor already

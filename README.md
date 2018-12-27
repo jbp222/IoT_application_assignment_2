@@ -10,9 +10,9 @@
   mobile phones
 
 Functionalities include:
-* bluetooth location based messaging and MAC address identification
-* location and sensor based activation of an electronic device (bluetooth and temperature sensor with smart plug & electic blanket)
-* location and sensor based illumination of light bulb
+* Bluetooth location based messaging and MAC address identification
+* Location and sensor based activation of an electronic device (bluetooth and temperature sensor with smart plug & electic blanket)
+* Location and sensor based illumination of light bulb
 
 ## Differences between proposal document and final implementation:
 * SenseHAT sensor was not used for this project as some GPIO pins were taken up by PIR sensor already

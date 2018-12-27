@@ -51,7 +51,7 @@ other_home = False
 twilio_client = Client(account_sid, auth_token)
 
 # tp-link config
-plug_body = json.dumps({"method": "login", "params": {"appType": "Kasa_Android", "cloudUserName": "", "cloudPassword": "", "t$
+plug_body = json.dumps({"method": "login", "params": {"appType": "Kasa_Android", "cloudUserName": "", "cloudPassword": "", "terminalUUID": "b4f5474f-afe0-4f3b-9cdd-52fe57c443fc"}})
 token_response = requests.post("https://wap.tplinkcloud.com", data=plug_body)
 token = str(token_response.json()['result']['token'])
 
@@ -87,12 +87,20 @@ try:
             other_home = False
         elif (my_phone != None and other_phone == None and im_home == False):
             print "SMS sent to Darren"
-            twilio_client.messages.create(body="Julianne is home", from_="MyHomeApp", to=other_num)
+            try:
+                twilio_client.messages.create(body="Julianne is home", from_="MyHomeApp", to=other_num)
+            except:
+                print "Had a connection error with Twilio"
+                pass
             im_home = True
             other_home = False
         elif (my_phone == None and other_phone != None and other_home == False):
             print "SMS sent to me"
-            twilio_client.messages.create(body="Darren is home", from_="MyHomeApp", to=my_num)
+            try:
+                twilio_client.messages.create(body="Darren is home", from_="MyHomeApp", to=my_num)
+            except:
+                print "Had a connection error with Twilio"
+                pass
             im_home = False
             other_home = True
         elif (my_phone != None and other_phone == None and im_home == True):
@@ -138,19 +146,20 @@ try:
             temp_resp = requests.get(bridge_url + hue_temp_sensor)
             temp = int(str(temp_resp.json()["state"]["temperature"])[0:2])
 
-            if hour >= on_time and hour <= off_time and not on:
-                if temp >= 10:
+            if hour >= on_time and hour < off_time and not on:
+                print "hour= " + str(hour) + " on= " + str(on) + " temp= " + str(temp)
+                if temp <= 15:
                     act = 1
                     enable = 1
                     delay = 1
-                    timerBody = json.dumps({"method": "passthrough", "params": {"deviceId": deviceId, "requestData": "{\"count_down\":$
+                    timerBody = json.dumps({"method": "passthrough", "params": {"deviceId": deviceId, "requestData": "{\"count_down\":{\"edit_rule\":{\"name\":\"\",\"act\":" + str(act) + ",\"enable\":" + str(enable) + ",\"id\":\"" + ruleId + "\",\"delay\":" + str(delay) + "}}}" }})
                     response = requests.post(url, data=timerBody)
                     time.sleep(5)
                     print "turning plug on..."
                     act = 0
                     enable = 1
                     delay = 360
-                    timerBody = json.dumps({"method": "passthrough", "params": {"deviceId": deviceId, "requestData": "{\"count_down\":$
+                    timerBody = json.dumps({"method": "passthrough", "params": {"deviceId": deviceId, "requestData": "{\"count_down\":{\"edit_rule\":{\"name\":\"\",\"act\":" + str(act) + ",\"enable\":" + str(enable) + ",\"id\":\"" + ruleId + "\",\"delay\":" + str(delay) + "}}}" }})
                     response = requests.post(url, data=timerBody)
                     print "1 hour timer set"
                     on = True
@@ -161,6 +170,3 @@ try:
 except KeyboardInterrupt:
    print "Quit"
    GPIO.cleanup()
-
-
-

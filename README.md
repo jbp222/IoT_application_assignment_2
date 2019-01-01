@@ -6,7 +6,7 @@
 
 ## Brief overview of project:
 * Smart home IoT application using physical devices and sensors incorptorating connected device architecture
-* Technologies and tools used to implement the project include Python, Bash, REST api's, Bluetooth, IoT Cloud Platform Twilio, PIR sensor, RPi 3, smart home hub, smart plug, smart bulb, smart motion sensor with temperature 
+* Technologies and tools used to implement the project include Python, Bash, REST api's, Bluetooth, IoT Cloud Platform Twilio, PIR sensor, RPi 3, smart home hub with Zigbee protocol, smart plug, smart bulb, smart motion sensor with temperature 
   sensor, mobile phones
 
 Functionalities include:

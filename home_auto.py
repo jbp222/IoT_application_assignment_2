@@ -34,7 +34,7 @@ GPIO.setwarnings(False)
 pin = 17
 GPIO.setup(pin, GPIO.IN)
 # Used LANScan app on Mac to get Bridge URL
-bridge_url = "http://192.168.1.78"
+bridge_url = ""
 body = {}
 # token generated as per steps in comment
 user = ""
@@ -159,7 +159,7 @@ try:
             temp = int(str(temp_resp.json()["state"]["temperature"])[0:2])
 
             if hour >= on_time and hour < off_time and not on:
-                if temp <= 15
+                if temp <= 15:
                     act = 1
                     enable = 1
                     # the api needs a timer to turn on the plug, couldnt find a solution to just turn on the plug without having to set a timer
